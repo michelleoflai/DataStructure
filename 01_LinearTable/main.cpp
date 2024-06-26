@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv)
 {
-	std::cout << "!!testing beging!! " << std::endl;
+	std::cout << "!!testing begining!! " << std::endl;
 
 	myStack::my_stack();
 	queueLink::my_link();
