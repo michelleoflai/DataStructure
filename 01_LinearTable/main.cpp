@@ -1,8 +1,10 @@
 #include <iostream>
 #include "include/01_myStack.hpp"
+// #include "include/02_queue_link.hpp"
 
-void my_stack(){
-    Stack S;
+void my_stack()
+{
+	Stack S;
 	// myStack::ush(S, 1);
 	myStack::Push(S, 8);
 	myStack::Push(S, 5);
@@ -17,18 +19,12 @@ void my_stack(){
 }
 
 
-
 int main(int argc, char **argv)
 {
-    std::cout<<"testing string! "<<std::endl;
+	std::cout << "testing string! " << std::endl;
 
-    my_stack();
+	my_stack();
+	// queueLink::my_link();
 
-
-
-
-
-
-
-    return 0;
+	return 0;
 }
