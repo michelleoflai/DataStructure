@@ -13,14 +13,12 @@ struct Stack
 class myStack
 {
 public:
-    // myStack(){
-    //     Stack S
-    // }
     static void Push(Stack &S, int key);
     static int Pop(Stack &S);
     static void delete_index(Stack &S, int key);
     static int find(Stack &S, int key);
-    static void show(Stack& S);
+    static void show(Stack &S);
+    static void my_stack();
 
 private:
     static Stack S;
@@ -90,15 +88,33 @@ void myStack::delete_index(Stack &S, int key)
     }
 }
 
-
 // 遍历整个栈
-void myStack::show(Stack& S) {
-	if (S.top == -1)
-		cout << "栈为空！" << endl;
-	int temp = S.top;	//定义一个临时指针
-	while (temp != -1) {
-		cout << S.Stacklist[temp] << " ";
-		--temp;
-	}
-	cout << endl;
+void myStack::show(Stack &S)
+{
+    if (S.top == -1)
+        cout << "栈为空！" << endl;
+    int temp = S.top; // 定义一个临时指针
+    while (temp != -1)
+    {
+        cout << S.Stacklist[temp] << " ";
+        --temp;
+    }
+    cout << endl;
+}
+
+// 测试用例
+void myStack::my_stack()
+{
+    Stack S;
+    // myStack::ush(S, 1);
+    myStack::Push(S, 8);
+    myStack::Push(S, 5);
+    myStack::Push(S, 4);
+    myStack::Push(S, 2);
+    myStack::show(S);
+    myStack::Pop(S);
+    myStack::show(S);
+    myStack::delete_index(S, 2);
+    myStack::delete_index(S, 5);
+    myStack::show(S);
 }

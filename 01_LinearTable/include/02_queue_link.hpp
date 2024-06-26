@@ -22,12 +22,17 @@ public:
     static void show();
     static void my_link();
 
-// private:
+    // private:
     static node *head;
     static node *tail;
     // // static node *link;
-    static int size ;
+    static int size;
 };
+
+// Define static members
+node *queueLink::head = nullptr;
+node *queueLink::tail = nullptr;
+int queueLink::size = 0;
 
 // 初始化结点  和链表
 void queueLink::init_node()
@@ -36,8 +41,8 @@ void queueLink::init_node()
     tail = new node;
     head->right = tail;
     tail->left = head;
-    head->left = NULL;
-    tail->right = NULL;
+    head->left = nullptr;
+    tail->right = nullptr;
 }
 
 //  左插
@@ -108,31 +113,35 @@ void queueLink::show()
 {
     if (size == 0)
     {
-        cout << "link is empty!!";
+        cout << "link is empty!!" << endl;
         return;
     }
-    while (head != tail)
+    node *current = head->right; // Use a temporary pointer
+    while (current != tail)
     {
-        cout << head->right->val << endl;
-        head->right = head->right->right;
+        cout << current->val << " ";
+        current = current->right;
     }
+    cout << endl;
 }
+
+// 测试用例
 void queueLink::my_link()
 {
-	queueLink::init_node();
-	queueLink::add_right(1);
-	queueLink::add_left(2);
-	queueLink::add_right(3);
-	queueLink::add_left(4);
-	queueLink::add_right(5);
-	queueLink::add_left(6);
-	queueLink::show();
-	queueLink::delete_right();
-	queueLink::delete_left();
-	queueLink::show();
-	queueLink::delete_right();
-	queueLink::delete_left();
-	queueLink::delete_right();
-	queueLink::delete_left();
-	queueLink::show();
+    queueLink::init_node();
+    queueLink::add_right(1);
+    queueLink::add_left(2);
+    queueLink::add_right(3);
+    queueLink::add_left(4);
+    queueLink::add_right(5);
+    queueLink::add_left(6);
+    queueLink::show();
+    queueLink::delete_right();
+    queueLink::delete_left();
+    queueLink::show();
+    queueLink::delete_right();
+    queueLink::delete_left();
+    queueLink::delete_right();
+    queueLink::delete_left();
+    queueLink::show();
 }
