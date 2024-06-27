@@ -60,4 +60,30 @@ public:
         Print_PreOrder(A); // succesfully -> 13582
         cout << endl;
     }
+
+    // 递归 先序 创建
+    static void create_recursion(biTree *&T)
+    {
+        // A(B(D,E),C(,))  13500800200
+        int num;
+        cout << " input current num (0 for null): ";
+        cin >> num;
+        if (num == 0)
+        {
+            return;
+        }
+        biTree *node = new biTree;
+        node->val = num;
+        T = node;
+        create_recursion(T->left);
+        create_recursion(T->right);
+    }
+    
+    // 递归 先序 创建 实现
+    static void create_recursion_test(){
+        biTree* T = new biTree;
+        create_recursion(T);
+        Print_PreOrder(T); // succesfully -> 13582
+        cout << endl;
+    }
 };
