@@ -6,7 +6,8 @@ int main(int argc, char **argv)
 	std::cout << "!!testing begining!! " << std::endl;
 
 	// BiTree::CreateBinTree_PreOrder();
-	BiTree::create_recursion_test();
+	// BiTree::create_recursion_test();
+	BiTree::create_mid_test();
 
 	std::cout << "!!testing end!!" << std::endl;
 

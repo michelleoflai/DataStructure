@@ -28,6 +28,17 @@ public:
         Print_PreOrder(tree->right);
     }
 
+    // 中序
+    static void Print_InOrder(biTree *tree){
+        if (tree == NULL)
+        {
+            return;
+        }
+        Print_PreOrder(tree->left);
+        cout << tree->val;
+        Print_PreOrder(tree->right);
+    }
+
     //  无递归创建 简单
     static void CreateBinTree_PreOrder()
     {
@@ -78,12 +89,17 @@ public:
         create_recursion(T->left);
         create_recursion(T->right);
     }
-    
+
     // 递归 先序 创建 实现
     static void create_recursion_test(){
         biTree* T = new biTree;
         create_recursion(T);
+        
         Print_PreOrder(T); // succesfully -> 13582
+
+        Print_InOrder(T);
+
         cout << endl;
     }
+
 };
