@@ -1,6 +1,7 @@
 #include <iostream>
 #include <01_tree_2.hpp>
-#include <02_BS_tree.hpp>
+#include <02_BST_create.hpp>
+#include<02_BST_search.hpp>
 
 int main(int argc, char **argv)
 {
@@ -8,7 +9,8 @@ int main(int argc, char **argv)
 
 	// BiTree::CreateBinTree_PreOrder();
 	// BiTree::create_recursion_test();
-	BST::creat_BST();
+	// BSTcreate::creat_BST();
+	BSTsearch::BST_search();
 
 	std::cout << "!!testing end!!" << std::endl;
 

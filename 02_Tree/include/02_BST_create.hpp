@@ -1,7 +1,10 @@
 #include <iostream>
 
 /**
- * binary search tree 二叉搜索树    // binary sort tree 二叉排序树
+ * 创建
+ * binary search tree 二叉搜索树    
+ * or
+ * binary sort tree 二叉排序树
  */
 
 using namespace std;
@@ -13,7 +16,7 @@ struct Node
     Node *right;
 };
 
-class BST
+class BSTcreate
 {
 public:
     // 插入节点
@@ -66,7 +69,7 @@ public:
         cout << endl;
 
         //  print
-        print_mid(T);
+        print_mid(T);   // successfully -> 0123456789
         cout << endl;
     }
 };
