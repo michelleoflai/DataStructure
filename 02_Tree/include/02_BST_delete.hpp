@@ -125,6 +125,7 @@ public:
                 // 略；
             }
         }
+        return T;
     }
 
     // 实现BST删除节点
@@ -132,7 +133,7 @@ public:
     {
         // create tree
         tree *T = create();
-        // BST_delete(T, 5);
+        T = BST_delete(T, 5);
         print_mid(T); // successfully -> 0123456789
         cout << endl;
     }
