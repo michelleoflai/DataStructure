@@ -1,5 +1,6 @@
 #include <iostream>
 #include <01_tree_2.hpp>
+#include <02_BS_tree.hpp>
 
 int main(int argc, char **argv)
 {
@@ -7,7 +8,7 @@ int main(int argc, char **argv)
 
 	// BiTree::CreateBinTree_PreOrder();
 	// BiTree::create_recursion_test();
-	BiTree::create_mid_test();
+	BST::creat_BST();
 
 	std::cout << "!!testing end!!" << std::endl;
 

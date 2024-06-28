@@ -34,9 +34,9 @@ public:
         {
             return;
         }
-        Print_PreOrder(tree->left);
+        Print_InOrder(tree->left);
         cout << tree->val;
-        Print_PreOrder(tree->right);
+        Print_InOrder(tree->right);
     }
 
     //  无递归创建 简单
@@ -95,8 +95,9 @@ public:
         biTree* T = new biTree;
         create_recursion(T);
         
-        Print_PreOrder(T); // succesfully -> 13582
-
+        cout<<"先序："<<endl;
+        // Print_PreOrder(T); // succesfully -> 13582
+        cout<<"中序："<<endl;
         Print_InOrder(T);
 
         cout << endl;
