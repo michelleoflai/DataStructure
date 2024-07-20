@@ -5,11 +5,47 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-#include <time.h>
+#include <ctime>
+#include <cstdlib>
 #define NO1 0 // 手撕数组
-#define NO2 1 // 字符串逆序   双指针知识点
+#define NO2 0 // 字符串逆序   双指针知识点
+#define NO3 1 // 整型数组，偶数调整到数组左边，奇数调整到数组右边   头条的面试
 
 using namespace std;
+
+#if NO3
+void change(int arr[], int size)
+{
+    int *p = arr;
+    int *q = arr + size - 1;
+    while (p < q)
+    {
+        while (p < q)
+        {
+            if ((*p & 0x1) == 1)
+            {
+                break;
+            }
+            p++;
+        }
+        while (p < q)
+        {
+            if ((*q & 0x1) == 0)
+            {
+                break;
+            }
+            q--;
+        }
+
+        int tmp = *p;
+        *p = *q;
+        *q = tmp;
+        p++;
+        q--;
+    }
+}
+
+#endif
 
 #if NO2
 
@@ -174,5 +210,25 @@ void main01()
     }
     cout << endl;
 
+#endif
+
+#if NO3
+    int arr[15] = {0};
+    srand(time(0));
+    for (int i = 0; i < 15; i++)
+    {
+        arr[i] = rand() % 100;
+    }
+    for (int v : arr)
+    {
+        cout << v << " ";
+    }
+    cout << endl;
+    change(arr, 15);
+    for (int v : arr)
+    {
+        cout << v << " ";
+    }
+    cout << endl;
 #endif
 }
