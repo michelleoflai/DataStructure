@@ -5,7 +5,7 @@ int main(int argc, char **argv)
 {
 	std::cout << "!!testing begining!! " << std::endl;
 
-main01();
+main02_2();
 
 
 	std::cout<<"!!testing end!!"<<std::endl;
