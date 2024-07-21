@@ -1,16 +1,7 @@
 /**
- * 反转链表
- * 思路：
- *      1、定义指针p指向head_->next;
- *      2、将head_的地址域制空，相当于一个空链表(head_>next=nullptr)
- *      3、把p指针指向的节点，头插法，依次插入新的空链表中；
- * 关键：头插法；
+ * 合并俩有序链表，且合并后仍然有序
  */
-
-/**
- * 倒数第k个指针  -> 快慢指针
- *
- */
+#include <time.h>
 #include <iostream>
 using namespace std;
 
@@ -77,52 +68,52 @@ public:
         }
         cout << endl;
     }
-    friend bool GetLastNode(Clink &link, int k, int &val);
     friend void MergeLink(Clink &link1, Clink &link2);
 
 private:
     Node *head_;
 };
-
-bool GetLastNode(Clink &link, int k, int &val)
+void MergeLink(Clink &link1, Clink &link2)
 {
-    Node *l = link.head_;
-    Node *r = l;
-
-    for (int i = 0; i < k; i++)
+    Node *l1 = link1.head_->next_;
+    Node *l2 = link2.head_->next_;
+    Node *last = link1.head_;
+    link2.head_->next_ == nullptr;
+    while (l2 != nullptr && l1 != nullptr)
     {
-        r = r->next_;
-        if (r == nullptr && i != k - 1)
+        if (l1->data_ < l2->data_)
         {
-            printf("fail long \n\n");
-            return false;
+            last->next_ = l1;
+            last = l1;
+            l1 = l1->next_;
+        }
+        else
+        {
+            last->next_ = l2;
+            last = l2;
+            l2 = l2->next_;
         }
     }
-
-    while (r != nullptr)
-    {
-        r = r->next_;
-        l = l->next_;
-    }
-    val = l->data_;
-    return true;
+    last->next_ = (l1 != nullptr) ? l1 : l2;
 }
 
-void main02_2()
+void main02_3()
 {
-    Clink link;
-    srand(time(0));
-    for (int i = 0; i < 10; i++)
+    Clink l1;
+    Clink l2;
+    int arr1[] = {78, 47, 36, 21, 4};
+    int arr2[] = {112, 95, 42, 40, 39, 10, 2};
+    for (int v : arr1)
     {
-        link.InserHead(rand() % 100 + 1);
+        l1.InserHead(v);
     }
-    link.show();
-    link.Reverse();
-    link.show();
-    int val;
-    if (GetLastNode(link, 11, val))
+    for (int v : arr2)
     {
-        cout << "delete: " << val << endl;
+        l2.InserHead(v);
     }
-    link.show();
+    l1.show();
+    l2.show();
+    MergeLink(l1, l2);
+    l1.show();
+    l2.show();
 }
