@@ -38,6 +38,15 @@ public:
         node->next_ = head_->next_;
         head_->next_ = node;
     }
+    void InserTail(int val)
+    {
+        Node *p = head_;
+        while (p->next_ != nullptr) // O(n)
+        {
+            p = p->next_;
+        }
+        p->next_ = new Node(val);
+    }
 
     void Reverse()
     {
@@ -78,7 +87,8 @@ void MergeLink(Clink &link1, Clink &link2)
     Node *l1 = link1.head_->next_;
     Node *l2 = link2.head_->next_;
     Node *last = link1.head_;
-    link2.head_->next_ == nullptr;
+    // link1.head_->next_ == nullptr;
+    // link2.head_->next_ == nullptr;
     while (l2 != nullptr && l1 != nullptr)
     {
         if (l1->data_ < l2->data_)
@@ -101,19 +111,19 @@ void main02_3()
 {
     Clink l1;
     Clink l2;
-    int arr1[] = {78, 47, 36, 21, 4};
-    int arr2[] = {112, 95, 42, 40, 39, 10, 2};
+    int arr1[] = {1,3,5,56,87};
+    int arr2[] = {2,6,32,68};
     for (int v : arr1)
     {
-        l1.InserHead(v);
+        l1.InserTail(v);
     }
     for (int v : arr2)
     {
-        l2.InserHead(v);
+        l2.InserTail(v);
     }
     l1.show();
     l2.show();
     MergeLink(l1, l2);
     l1.show();
-    l2.show();
+    // l2.show();
 }
