@@ -4,10 +4,10 @@
 int main(int argc, char **argv)
 {
 	std::cout << "!!testing begining!! " << std::endl;
-
-main2_6();
+	
+	main06_1();
 
 	std::cout << "!!testing end!!" << std::endl;
-
+	
 	return 0;
 }
