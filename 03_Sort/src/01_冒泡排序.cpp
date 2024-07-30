@@ -1,11 +1,8 @@
 /**
- * 冒泡排序
+ * 基础排序：
+ * 冒泡排序 时间复杂度 O(n^2)    空间复杂度O(1) 稳定    效率最低，交换次数太对  
+ *        
  */
-
-#include <iostream>
-#include <time.h>
-#include <stdlib.h>
-using namespace std;
 
 void BubbleSort(int arr[], int size)
 {
@@ -30,26 +27,4 @@ void BubbleSort(int arr[], int size)
             return;
         }
     }
-}
-
-void main01()
-{
-    int arr[10];
-    srand(time(0));
-    for (size_t i = 0; i < 10; i++)
-    {
-        arr[i] = rand() % 100;
-    }
-    for (int v : arr)
-    {
-        cout << v << " ";
-    }
-    cout << endl;
-    BubbleSort(arr, sizeof(arr) / sizeof(int));
-
-    for (int v : arr)
-    {
-        cout << v << " ";
-    }
-    cout << endl;
 }
