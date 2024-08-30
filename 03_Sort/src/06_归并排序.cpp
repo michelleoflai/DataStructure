@@ -4,11 +4,6 @@
  *      递->归并
  */
 
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 void Merge(int arr[], int l, int m, int r, int *p)
 {
     // int *p = new int[r - l + 1];
@@ -58,6 +53,7 @@ void MergeSort(int arr[], int begin, int end, int *p)
     Merge(arr, begin, mid, end, p);
 }
 
+// 统一测试接口
 void MergeSort(int arr[], int size)
 {
     int *p = new int[size];

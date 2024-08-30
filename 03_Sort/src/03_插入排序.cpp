@@ -27,18 +27,3 @@ void InsertSort(int arr[], int size)
         arr[j + 1] = val;
     }
 }
-
-void InsertSort_2(int arr[], int size)
-{
-    for (int i = 1; i < size; i++)
-    {
-        int j = i - 1;
-        int key = arr[i];
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
